@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkNetwork (WebView v) {
         if (networkInfo != null && networkInfo.isConnected()) {
-            v.loadData("<html><body>" + networkInfo.getTypeName() + "</body></html>", "text/html", "UTF-8");
+            v.loadDataWithBaseURL(null,"<html><body>" + networkInfo.getTypeName() + "</body></html>", "text/html", "UTF-8", null);
         } else {
-            v.loadData("<html><body>Vous n'etes pas connecte au reseau</body></html>", "text/html", "UTF-8");
+            v.loadDataWithBaseURL(null, "<html><body>Vous n'êtes pas connecté au reseau</body></html>", "text/html", "UTF-8", null);
         }
     }
 
